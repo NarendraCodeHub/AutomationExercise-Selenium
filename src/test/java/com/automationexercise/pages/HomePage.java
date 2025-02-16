@@ -1,5 +1,6 @@
 package com.automationexercise.pages;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,6 +72,48 @@ public class HomePage {
 
 	public void clickContactUs() {
 		contactUsLink.click();
+	}
+
+	// Validation methods
+	public boolean isHomeLinkDisplayed() {
+		return isElementDisplayed(homeLink);
+	}
+
+	public boolean isProductsLinkDisplayed() {
+		return isElementDisplayed(productsLink);
+	}
+
+	public boolean isCartLinkDisplayed() {
+		return isElementDisplayed(cartLink);
+	}
+
+	public boolean isSignupLoginLinkDisplayed() {
+		return isElementDisplayed(signupLoginLink);
+	}
+
+	public boolean isTestCasesLinkDisplayed() {
+		return isElementDisplayed(testCasesLink);
+	}
+
+	public boolean isApiTestingLinkDisplayed() {
+		return isElementDisplayed(apiTestingLink);
+	}
+
+	public boolean isVideoTutorialsLinkDisplayed() {
+		return isElementDisplayed(videoTutorialsLink);
+	}
+
+	public boolean isContactUsLinkDisplayed() {
+		return isElementDisplayed(contactUsLink);
+	}
+
+	// Helper method to handle NoSuchElementException
+	private boolean isElementDisplayed(WebElement element) {
+		try {
+			return element.isDisplayed();
+		} catch (NoSuchElementException e) {
+			return false;
+		}
 	}
 
 }
