@@ -15,6 +15,9 @@ public class HomePage {
 	@FindBy(xpath = "//a[.=' Home']")
 	private WebElement homeLink;
 
+	@FindBy(xpath = "//h2[.='Features Items']")
+	public WebElement getItemsText;
+
 	@FindBy(xpath = "//a[@href='/products']")
 	private WebElement productsLink;
 
@@ -75,6 +78,7 @@ public class HomePage {
 	}
 
 	// Validation methods
+
 	public boolean isHomeLinkDisplayed() {
 		return isElementDisplayed(homeLink);
 	}
@@ -114,6 +118,10 @@ public class HomePage {
 		} catch (NoSuchElementException e) {
 			return false;
 		}
+	}
+
+	public WebElement getItemsText() {
+		return getItemsText;
 	}
 
 }
