@@ -7,7 +7,7 @@ import com.automationexercise.pages.SignupLoginPage;
 
 public class SignupTest extends BaseTest {
 
-	@Test(enabled = false)
+	@Test
 	public void signupTest() {
 		// Initialize the LoginPage object
 		SignupLoginPage signupLoginPage = new SignupLoginPage(driver);

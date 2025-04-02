@@ -4,8 +4,8 @@ import java.time.Duration;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,11 +14,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BrowserFactory {
 	public static WebDriver startApplication(WebDriver driver, String weburl) {
 
-		// Manage specific Browser - Chrome
-		WebDriverManager.chromedriver().setup();
-		ChromeOptions op = new ChromeOptions();
-		op.addArguments("--remote-allow-origins=*");
-		driver = new ChromeDriver(op);
+		// Manage specific Browser - FIreFox
+		WebDriverManager.firefoxdriver().setup();
+		FirefoxOptions op = new FirefoxOptions();
+		op.setAcceptInsecureCerts(true);
+		driver = new FirefoxDriver(op);
 
 		// Maximize the Browser
 		driver.manage().window().maximize();

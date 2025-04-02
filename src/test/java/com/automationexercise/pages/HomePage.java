@@ -30,7 +30,7 @@ public class HomePage {
 	@FindBy(xpath = "//a[@href='/test_cases']")
 	private WebElement testCasesLink;
 
-	@FindBy(xpath = "//a[@href='/api_testing']")
+	@FindBy(xpath = "//a[@href='/api_list']")
 	private WebElement apiTestingLink;
 
 	@FindBy(xpath = "//a[.=' Video Tutorials']")

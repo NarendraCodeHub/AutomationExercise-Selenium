@@ -2,7 +2,6 @@ package com.automationexercise.testcases;
 
 import java.time.Duration;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -20,7 +19,7 @@ public class HomePageTest extends BaseTest {
 		homePage = new HomePage(driver);
 		// Wait for the home page to fully load
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.visibilityOf(homePage.getItemsText()));
+		// wait.until(ExpectedConditions.visibilityOf(homePage.getItemsText()));
 	}
 
 	@Test(priority = 1)
@@ -63,6 +62,7 @@ public class HomePageTest extends BaseTest {
 	public void testVideoTutorialsLink() {
 		Assert.assertTrue(homePage.isVideoTutorialsLinkDisplayed(), "Video Tutorials link is not displayed");
 		homePage.clickVideoTutorials();
+		driver.navigate().back();
 	}
 
 	@Test(priority = 8)
