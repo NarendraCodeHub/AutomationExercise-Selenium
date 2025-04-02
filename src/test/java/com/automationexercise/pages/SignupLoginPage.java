@@ -12,6 +12,10 @@ public class SignupLoginPage {
 	/**
 	 * New User Signup!
 	 */
+
+	@FindBy(xpath = "//h2[.='New User Signup!']")
+	private WebElement signupText;
+
 	@FindBy(xpath = "//input[@data-qa='signup-name']")
 	private WebElement signupName;
 
@@ -31,6 +35,10 @@ public class SignupLoginPage {
 	public SignupLoginPage(WebDriver driver) {
 		this.d = driver;
 		PageFactory.initElements(d, this);
+	}
+
+	public void isVisibleSignupText() {
+		signupText.isDisplayed();
 	}
 
 	public void enterSignupName(String user) {
